@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication Skills Checklist</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial,sans-serif;background:#ffffff;color:#1a1a1a;padding:1.25rem 1rem;}
+.wrap{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;}
+
+.card{background:#ffffff;border:1px solid rgba(0,0,0,0.13);border-radius:10px;padding:22px 26px;}
+.tool-title{font-size:22px;font-weight:700;color:#0064b1;text-align:center;margin-bottom:14px;}
+.card-sub{font-size:13px;color:#3d3d3d;line-height:1.7;}
+.instr-head{font-size:14px;font-weight:700;color:#0064b1;margin:16px 0 6px;}
+.instr-list{font-size:13px;color:#3d3d3d;line-height:1.7;padding-left:22px;}
+.instr-list li{margin-bottom:5px;}
+.attribution{font-size:11px;color:#757575;text-align:center;margin-top:18px;padding-top:14px;border-top:1px solid rgba(0,0,0,0.08);line-height:1.7;}
+
+.btn{font-size:13px;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:500;border:1.5px solid;font-family:Arial,sans-serif;}
+.btn-primary{background:#0064b1;color:#ffffff;border-color:#0064b1;}
+.btn-primary:hover{background:#004f8e;border-color:#004f8e;}
+.btn-secondary{background:#ffffff;color:#1a1a1a;border-color:rgba(0,0,0,0.35);}
+.btn-secondary:hover{background:#0064b1;color:#ffffff;border-color:#0064b1;}
+.btn-section:hover{filter:brightness(0.9);}
+.btn:focus-visible{outline:2px solid #0064b1;outline-offset:2px;}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.nav-hint{font-size:11px;color:#C93E1C;text-align:center;flex:1;min-height:16px;}
+.center{text-align:center;}
+
+/* Progress */
+.progress-card{display:flex;align-items:center;gap:14px;padding:12px 20px;}
+.progress-counter{font-size:12.5px;color:#1a1a1a;line-height:1.4;min-width:220px;}
+.progress-track{flex:1;height:10px;background:#e8e8e4;border-radius:5px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:5px;transition:width .3s ease,background .3s ease;}
+
+/* Question */
+.q-card{padding:0;overflow:hidden;border-width:3px;}
+.q-banner{width:100%;padding:15px 26px;font-size:20px;font-weight:700;line-height:1.3;}
+.q-inner{padding:20px 26px 24px;}
+.q-legend{font-size:16px;font-weight:500;color:#1a1a1a;line-height:1.7;margin-bottom:22px;display:block;width:100%;}
+fieldset{border:none;}
+.scale-ends{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:#3d3d3d;margin-bottom:8px;}
+.opts{display:flex;flex-direction:row;gap:8px;}
+.opt{flex:1;min-width:52px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 4px 12px;border-radius:8px;border:1.5px solid rgba(0,0,0,0.15);cursor:pointer;gap:8px;transition:border-color .15s,background .15s,color .15s;background:#ffffff;color:#1a1a1a;}
+.opt input[type=radio]{width:18px;height:18px;cursor:pointer;}
+.opt input[type=radio]:focus-visible{outline:2px solid #0064b1;outline-offset:2px;}
+.opt-label{font-size:15px;font-weight:700;line-height:1.2;}
+.opt-sub{font-size:11px;line-height:1.3;}
+
+/* Results */
+.res-intro{background:#f4f8fb;border-left:4px solid #0064b1;border-radius:0 6px 6px 0;padding:12px 16px;font-size:13px;color:#1a1a1a;line-height:1.65;margin-top:10px;}
+.group-card{border:3px solid;border-radius:10px;background:#fff;overflow:hidden;margin-bottom:14px;}
+.group-banner{width:100%;padding:10px 18px;font-size:16px;font-weight:700;}
+.group-inner{padding:12px 18px 14px;}
+.group-desc{font-size:12.5px;color:#3d3d3d;line-height:1.6;margin-bottom:8px;}
+.item-row{padding:9px 0;border-top:1px solid rgba(0,0,0,0.07);}
+.item-tag{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:12px;margin-bottom:5px;}
+.item-text{font-size:13px;color:#1a1a1a;line-height:1.55;margin-bottom:5px;}
+.rating-bar-row{display:flex;align-items:center;gap:10px;}
+.rating-track{flex:1;max-width:240px;height:10px;background:#eeeeea;border-radius:5px;overflow:hidden;border:0.5px solid rgba(0,0,0,0.08);}
+.rating-fill{height:100%;border-radius:5px;}
+.rating-text{font-size:12px;font-weight:700;color:#1a1a1a;white-space:nowrap;}
+.empty-note{font-size:12.5px;color:#757575;font-style:italic;padding:6px 0;}
+
+.hidden{display:none!important;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <div id="intro-section">
+    <div class="card">
+      <h1 class="tool-title">Communication Skills Checklist</h1>
+      <p class="card-sub">This checklist helps you identify the specific communication skills you may want to develop and use in your relationships. You will rate yourself on 23 skills across five areas: Listening and Understanding, Expressing Positives, Talking About Feelings, Expressing Negative Feelings, and Making Requests.</p>
+
+      <div class="instr-head">Instructions</div>
+      <ul class="instr-list">
+        <li>Each statement will appear one at a time. Rate how well you use that skill on a scale of 1 (Not So Well) to 5 (Very Well).</li>
+        <li>Answer honestly, based on how you communicate now.</li>
+        <li>The checklist does not produce a score. When you finish, your skills will be organized to show where you may want to focus your growth.</li>
+      </ul>
+
+      <div class="instr-head">Keyboard Navigation</div>
+      <ul class="instr-list">
+        <li>Press <strong>Tab</strong> to move between the rating options and buttons.</li>
+        <li>When focused on the rating options, use the <strong>Arrow keys</strong> to move between choices and select your rating.</li>
+        <li>Press <strong>Enter</strong> or <strong>Space</strong> to activate buttons.</li>
+      </ul>
+
+      <p class="attribution">Feldman, C. M. <em>The Therapist&rsquo;s Toolkit</em>. Adapted and expanded from P. H. Neidig &amp; D. H. Friedman (1984).</p>
+    </div>
+    <div class="center" style="margin-top:1rem;">
+      <button class="btn btn-primary" onclick="csStart()">Begin &#8594;</button>
+    </div>
+  </div>
+
+  <!-- ============ CHECKLIST ============ -->
+  <div id="assess-section" class="hidden">
+    <div class="progress-card card" style="margin-bottom:1rem;">
+      <span class="progress-counter" id="cs-prog-text" aria-live="polite" aria-atomic="true"></span>
+      <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="cs-prog-fill"></div></div>
+    </div>
+
+    <div class="card q-card" id="cs-qcard" style="margin-bottom:1rem;">
+      <h2 class="q-banner" id="cs-banner" tabindex="-1"></h2>
+      <div class="q-inner">
+        <form novalidate>
+          <fieldset>
+            <legend class="q-legend" id="cs-q-text"></legend>
+            <div class="scale-ends" aria-hidden="true"><span>Not So Well</span><span>Very Well</span></div>
+            <div class="opts" id="cs-opts"></div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn btn-secondary" id="cs-back" onclick="csNav(-1)">&#8592; Back</button>
+      <span class="nav-hint" id="cs-hint" role="alert" aria-live="polite"></span>
+      <button class="btn btn-section" id="cs-next" onclick="csNav(1)">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- ============ RESULTS ============ -->
+  <div id="results-section" class="hidden">
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="instr-head" id="res-heading" tabindex="-1" style="font-size:17px;margin-top:0;">My Communication Skills Results</div>
+      <p class="card-sub">Your skills are organized below based on how you rated them.</p>
+      <div class="res-intro">This checklist does not have a score. It is meant to help you identify the specific communication skills to develop and use in relationships. Skills rated 1 or 2 should be your primary focus for improvement. Skills rated 3 are reasonably good but could be enhanced.</div>
+    </div>
+    <div id="results-list"></div>
+    <div class="center" style="margin-top:.5rem;">
+      <button class="btn btn-secondary" onclick="csRestart()">Start over</button>
+    </div>
+  </div>
+
+  <div id="cs-live" role="status" aria-live="polite" class="sr-only"></div>
+</div>
+
+<script>
+(function(){
+
+var SECTIONS=[
+  {name:"Listening and Understanding", color:"#0064b1", textOn:"#ffffff",
+   items:[
+    "I make an effort to be physically and mentally ready to listen, and pay attention without distractions.",
+    "I listen without interrupting the speaker.",
+    "I tell the speaker, in my own words, what I understand them to be saying.",
+    "I ask the other person what they feel.",
+    "I listen without constantly trying to fix the problem or constantly giving advice.",
+    "I let the speaker talk without changing the topic, tuning them out, or leaving.",
+    "I ask questions to get more information.",
+    "I accept that the other person may have a different opinion than mine and that they are not \u201cRight\u201d or \u201cWrong.\u201d"
+   ]},
+  {name:"Expressing Positives", color:"#90be6d", textOn:"#1a1a1a",
+   items:[
+    "I show my affection and caring in words.",
+    "I give praise and compliments.",
+    "I express my appreciation without adding reminders of dissatisfaction."
+   ]},
+  {name:"Talking About Feelings", color:"#FFCD00", textOn:"#1a1a1a",
+   items:[
+    "I put my feelings into words.",
+    "I talk about ME and MY feelings, not just about the other person and what they did.",
+    "I talk about issues that are happening now, rather than bringing up the past.",
+    "I talk about a range of different feelings."
+   ]},
+  {name:"Expressing Negative Feelings", color:"#f58025", textOn:"#1a1a1a",
+   items:[
+    "I express my negative feelings without stewing over them.",
+    "I focus my negative comments on the other person\u2019s ACTIONS, rather than on their character or personality.",
+    "I express my negative feelings without verbal attacks, threats, or intimidation.",
+    "I accept and talk about MY part in problems, rather than blaming the other person for everything."
+   ]},
+  {name:"Making Requests", color:"#007398", textOn:"#ffffff",
+   items:[
+    "I make requests of the other person without waiting until I get all worked up.",
+    "I say \u201cI would like\u201d not \u201cYou should.\u201d",
+    "I tell the other person what I want them to do MORE OF, instead of complaining about what they should STOP doing.",
+    "I express my appreciation for positive steps the other person has taken toward doing what I requested."
+   ]}
+];
+
+var SCALE=[
+  {value:1,sub:"Not So Well",aria:"1, not so well"},
+  {value:2,sub:"",aria:"2"},
+  {value:3,sub:"",aria:"3"},
+  {value:4,sub:"",aria:"4"},
+  {value:5,sub:"Very Well",aria:"5, very well"}
+];
+
+var GROUPS=[
+  {name:"Focus for Improvement", color:"#E04E39", textOn:"#1a1a1a", min:1, max:2,
+   desc:"You rated these skills 1 or 2. These are the skills to make your primary focus for improvement."},
+  {name:"Could Be Enhanced", color:"#FFCD00", textOn:"#1a1a1a", min:3, max:3,
+   desc:"You rated these skills 3. They are reasonably good but could be enhanced."},
+  {name:"Strengths", color:"#90be6d", textOn:"#1a1a1a", min:4, max:5,
+   desc:"You rated these skills 4 or 5. These are communication strengths you can continue to build on."}
+];
+
+var queue=[];
+SECTIONS.forEach(function(sec,si){sec.items.forEach(function(_,ii){queue.push({s:si,i:ii});});});
+var answers=SECTIONS.map(function(sec){return new Array(sec.items.length).fill(0);});
+var cur=0, lastSection=-1;
+
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+window.csStart=function(){
+  cur=0;lastSection=-1;
+  document.getElementById('intro-section').classList.add('hidden');
+  document.getElementById('assess-section').classList.remove('hidden');
+  renderQ(true);
+};
+
+function renderQ(suppressAnnounce){
+  var entry=queue[cur], sec=SECTIONS[entry.s], total=queue.length;
+
+  document.getElementById('cs-prog-text').textContent='Skill '+(cur+1)+' of '+total+': '+sec.name+' ('+(entry.i+1)+' of '+sec.items.length+')';
+  var fill=document.getElementById('cs-prog-fill');
+  fill.style.width=(((cur+1)/total)*100)+'%';
+  fill.style.background=sec.color;
+
+  if(entry.s!==lastSection&&lastSection!==-1&&!suppressAnnounce){
+    document.getElementById('cs-live').textContent='You have moved to a new section: '+sec.name+'.';
+  }
+  lastSection=entry.s;
+
+  document.getElementById('cs-qcard').style.borderColor=sec.color;
+  var banner=document.getElementById('cs-banner');
+  banner.textContent=sec.name;
+  banner.style.background=sec.color;
+  banner.style.color=sec.textOn;
+
+  document.getElementById('cs-q-text').textContent=sec.items[entry.i];
+
+  var opts=document.getElementById('cs-opts');
+  opts.innerHTML='';
+  SCALE.forEach(function(s){
+    var sel=answers[entry.s][entry.i]===s.value;
+    var div=document.createElement('div');
+    div.className='opt';
+    if(sel){div.style.background=sec.color;div.style.borderColor=sec.color;div.style.color=sec.textOn;}
+    div.addEventListener('mouseover',function(){if(answers[entry.s][entry.i]!==s.value) div.style.borderColor=sec.color;});
+    div.addEventListener('mouseout',function(){if(answers[entry.s][entry.i]!==s.value) div.style.borderColor='rgba(0,0,0,0.15)';});
+    div.addEventListener('click',function(){csSelect(s.value);});
+
+    var radio=document.createElement('input');
+    radio.type='radio';radio.name='cs-q';radio.id='cs-opt-'+s.value;radio.value=s.value;radio.checked=sel;
+    radio.style.accentColor=sec.color;
+    radio.setAttribute('aria-label',s.aria);
+    radio.addEventListener('change',function(){csSelect(s.value);});
+
+    var label=document.createElement('label');
+    label.setAttribute('for','cs-opt-'+s.value);
+    label.className='opt-label';
+    label.textContent=s.value;
+
+    div.appendChild(radio);div.appendChild(label);
+    if(s.sub){
+      var sub=document.createElement('span');
+      sub.className='opt-sub';sub.setAttribute('aria-hidden','true');sub.textContent=s.sub;
+      div.appendChild(sub);
+    }
+    opts.appendChild(div);
+  });
+
+  document.getElementById('cs-back').setAttribute('aria-label',cur===0?'Return to introduction':'Go to previous skill');
+  var next=document.getElementById('cs-next');
+  var isLast=(cur===total-1);
+  next.innerHTML=isLast?'See My Results \u2713':'Next \u2192';
+  next.setAttribute('aria-label',isLast?'Finish and see results':'Go to next skill');
+  next.style.background=sec.color;next.style.color=sec.textOn;next.style.borderColor=sec.color;
+
+  document.getElementById('cs-hint').textContent='';
+  banner.focus();
+}
+
+window.csSelect=function(val){
+  var entry=queue[cur];
+  answers[entry.s][entry.i]=val;
+  renderQ(true);
+  var sel=document.getElementById('cs-opt-'+val);
+  if(sel) sel.focus();
+};
+
+window.csNav=function(dir){
+  var entry=queue[cur];
+  if(dir===-1){
+    if(cur===0){
+      document.getElementById('assess-section').classList.add('hidden');
+      document.getElementById('intro-section').classList.remove('hidden');
+      return;
+    }
+    cur--;renderQ();return;
+  }
+  if(answers[entry.s][entry.i]===0){
+    document.getElementById('cs-hint').textContent='Please select a rating before continuing.';
+    var first=document.querySelector('#cs-opts input[type=radio]');
+    if(first) first.focus();
+    return;
+  }
+  if(cur===queue.length-1){showResults();return;}
+  cur++;renderQ();
+};
+
+function showResults(){
+  document.getElementById('assess-section').classList.add('hidden');
+  document.getElementById('results-section').classList.remove('hidden');
+  var list=document.getElementById('results-list');
+  list.innerHTML='';
+
+  GROUPS.forEach(function(g){
+    var rows='';
+    var count=0;
+    SECTIONS.forEach(function(sec,si){
+      sec.items.forEach(function(item,ii){
+        var v=answers[si][ii];
+        if(v>=g.min&&v<=g.max){
+          count++;
+          rows+=
+            '<div class="item-row">'+
+              '<span class="item-tag" style="background:'+sec.color+';color:'+sec.textOn+';">'+esc(sec.name)+'</span>'+
+              '<div class="item-text">'+esc(item)+'</div>'+
+              '<div class="rating-bar-row">'+
+                '<div class="rating-track" aria-hidden="true"><div class="rating-fill" style="width:'+(v/5*100)+'%;background:'+g.color+';"></div></div>'+
+                '<span class="rating-text">'+v+' / 5</span>'+
+              '</div>'+
+            '</div>';
+        }
+      });
+    });
+    if(!count) rows='<div class="empty-note">You did not rate any skills in this range.</div>';
+
+    var card=document.createElement('section');
+    card.className='group-card';
+    card.style.borderColor=g.color;
+    card.setAttribute('aria-label',g.name+', '+count+' skill'+(count===1?'':'s'));
+    card.innerHTML=
+      '<h3 class="group-banner" style="background:'+g.color+';color:'+g.textOn+';">'+esc(g.name)+' ('+count+')</h3>'+
+      '<div class="group-inner"><p class="group-desc">'+esc(g.desc)+'</p>'+rows+'</div>';
+    list.appendChild(card);
+  });
+
+  document.getElementById('cs-live').textContent='Results displayed, organized by focus area.';
+  document.getElementById('res-heading').focus();
+}
+
+window.csRestart=function(){
+  if(!confirm('Start over? This will clear all of your ratings.')) return;
+  answers=SECTIONS.map(function(sec){return new Array(sec.items.length).fill(0);});
+  cur=0;lastSection=-1;
+  document.getElementById('results-section').classList.add('hidden');
+  document.getElementById('intro-section').classList.remove('hidden');
+};
+
+})();
+</script>
+</body>
+</html>
